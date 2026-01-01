@@ -24,6 +24,11 @@ export const router = createRouter({
           name: "user",
           component: () => import("@/views/UserProfile.vue"),
         },
+        {
+          path: "user2",
+          name: "user2",
+          component: () => import("@/views/SlotUserProfile.vue"),
+        },
       ],
     },
   ],

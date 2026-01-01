@@ -67,6 +67,13 @@ const list = ref([
         url: "User",
     },
     {
+        path: "/user2",
+        name: "user2",
+        label: "用户Profile",
+        icon: User,
+        url: "UserProfile",
+    },
+    {
         path: "/mixin",
         name: "mixin",
         label: "Mixin示例",
