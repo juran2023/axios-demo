@@ -1,5 +1,9 @@
 <script setup>
 import FetchComponent from '../components/FetchComponent.vue';
+import FunctionalComponent from '../components/FunctionalComponent.js';
+
+FunctionalComponent.props = ['user']
+FunctionalComponent.attrs = ['class', 'color']
 </script>
 
 <template>
@@ -11,6 +15,7 @@ import FetchComponent from '../components/FetchComponent.vue';
                     <p><strong>Name:</strong> {{ data.name }}</p>
                     <p><strong>avatar:</strong> {{ data.avatarUrl }}</p>
                     <p><strong>Twitter:</strong> {{ data.twitterUsername }}</p>
+                    <FunctionalComponent :user="data.name" :class="data.twitterUsername" :color="data.avatarUrl" />
                 </div>
             </template>
         </FetchComponent>
