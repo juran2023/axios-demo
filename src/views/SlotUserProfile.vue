@@ -1,9 +1,17 @@
 <script setup>
+import { onMounted } from 'vue';
 import FetchComponent from '../components/FetchComponent.vue';
 import FunctionalComponent from '../components/FunctionalComponent.js';
+import { getCurrentInstance, ref } from 'vue';
+const msg = ref('');
 
 FunctionalComponent.props = ['user']
 FunctionalComponent.attrs = ['class', 'color']
+
+
+onMounted(() => {
+    msg.value = getCurrentInstance().appContext.config.globalProperties.$hello("Ranju");
+});
 </script>
 
 <template>
@@ -19,5 +27,7 @@ FunctionalComponent.attrs = ['class', 'color']
                 </div>
             </template>
         </FetchComponent>
+        <input v-focus placeholder="I will be focused" />
+        <div>{{ msg }}</div>
     </div>
 </template>
