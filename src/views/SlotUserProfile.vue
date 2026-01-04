@@ -29,5 +29,6 @@ onMounted(() => {
         </FetchComponent>
         <input v-focus placeholder="I will be focused" />
         <div>{{ msg }}</div>
+        <component :is="FunctionalComponent" user="Dynamic User" class="dynamic-class" color="blue" />
     </div>
 </template>
